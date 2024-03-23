@@ -1,8 +1,26 @@
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "./auth";
+import { cookies } from "next/headers";
 
 export async function getCurrentUser() {
-  const session = await getServerSession(authOptions);
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/auth/session`, {
+      method: "GET",
+      credentials: "include",
+      headers: { Cookie: cookies().toString() },
+    });
 
-  return session?.user;
+    console.log(res);
+    
+    if (!res.ok) {
+      return null;
+    }
+
+    const session = await res.json();
+
+    return session;
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    console.log(error);
+
+    return error;
+  }
 }

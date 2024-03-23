@@ -5,17 +5,19 @@ import Calendar from './Calendar';
 import { getUserBalances } from '@/lib/data/getBalanceData';
 import Container from '@/components/Common/Container';
 import UserBalances from './UserBalances';
-import { getEventsData } from '@/lib/data/getEventData';
-import { Balances, User } from '@/types';
+import { getUserEventsData } from '@/lib/data/getEventData';
+import { Balances, Events, User } from '@/types';
 
 const Portal = async () => {
   const user = await getCurrentUser();
-  const CurrentYearBalances = await getUserBalances();
-  const Events = await getEventsData();
+
+  
+  // const CurrentYearBalances = await getUserBalances();
+  // const Events = await getUserEventsData();
   return (
     <>
     <WelcomeBanner user={user as User} />
-    <Calendar events={Events} />
+    {/* <Calendar events={Events as Events[]} />
     <div>
         <Container>
           {!CurrentYearBalances ? (
@@ -33,7 +35,7 @@ const Portal = async () => {
           )}
         </Container>
         <UserBalances balances={CurrentYearBalances as  Balances} />
-      </div>
+      </div> */}
     </>
   )
 }
