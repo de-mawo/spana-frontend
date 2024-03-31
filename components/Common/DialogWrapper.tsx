@@ -34,7 +34,7 @@ const DialogWrapper = ({
   return (
     <Dialog open={open} onOpenChange={setOpen} >
       <DialogTrigger asChild>
-        {isBtn ? <Button className="text-white">{btnTitle}</Button> : Icon && <Icon className="text-blue-600  cursor-pointer" size={24}/>}
+        {isBtn ? <Button className="text-white dark:text-black">{btnTitle}</Button> : Icon && <Icon className="text-blue-600  cursor-pointer" size={24}/>}
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

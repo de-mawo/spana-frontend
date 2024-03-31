@@ -8,7 +8,7 @@ import { Button } from "../ui/button";
 export function AuthForm() {
 
   const LoginWithGoogle = () => {
-    window.open(`${process.env.NEXT_PUBLIC_AUTH_URL}`, '_self')
+    window.open(`${process.env.NEXT_PUBLIC_SERVER_URL}/auth/authorize/google`, '_self')
   }
   
   return (

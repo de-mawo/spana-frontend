@@ -13,7 +13,7 @@ const WelcomeBanner = ({ user }: Props) => {
         {/* LEFT SIDE */}
         <div className="flex justify-start items-center">
           <h2 className="text-xl font-extrabold leading-tight  lg:text-2xl">
-            Welcome {user.name}!
+            Welcome {user?.name}!
           </h2>
         </div>
 
