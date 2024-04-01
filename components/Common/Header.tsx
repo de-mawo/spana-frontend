@@ -13,14 +13,15 @@ import Container from "./Container"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import SideBarDrawer from "./SideBarDrawer";
 import ToggleDarkLight from "./ToggleDarkLight";
-import { User } from "@prisma/client";
 import LogoutBtn from "./LogoutBtn";
+import { User } from "@/types";
 
 type HeaderProps = {
   user: User;
 };
 
 const Header = ({ user }: HeaderProps) => {
+  
   return (
     <Container>
       <header className=" z-10 bg-white rounded-md shadow-sm dark:bg-black dark:border-b ">

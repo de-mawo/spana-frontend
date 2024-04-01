@@ -11,7 +11,9 @@ const LogoutBtn = () => {
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/auth/logout`,
+        { method: "POST" }
       );
+
       if (res.ok) {
         toast.error("User Logged out");
         router.refresh();
