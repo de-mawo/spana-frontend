@@ -10,6 +10,13 @@ export type User = {
   department: string;
 };
 
+export type Session = {
+  name: string;
+  email: string;
+  image: string;
+  role: string;
+};
+
 export type LeaveType = {
   id: string;
   values: string;

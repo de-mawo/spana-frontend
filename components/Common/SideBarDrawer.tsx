@@ -4,8 +4,8 @@ import ToggleDarkLight from "./ToggleDarkLight";
 import { RenderRoutes } from "./RenderRoutes";
 import { AdminRoutes, ModeratorRoutes, UserRoutes } from "./Routes";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
-import { User } from "@prisma/client";
 import LogoutBtn from "./LogoutBtn";
+import { User } from "@/types";
 
 type SideBarDrawerProps = {
   user: User;
