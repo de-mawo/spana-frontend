@@ -5,7 +5,7 @@ import { cookies } from "next/headers";
 export async function getAllEventsData() {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/event`,
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/events`,
       {
         method: "GET",
         credentials: "include",

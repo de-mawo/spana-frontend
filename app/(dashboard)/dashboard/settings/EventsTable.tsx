@@ -6,14 +6,14 @@ import {
     TableHeader,
     TableRow,
   } from "@/components/ui/table";
-  import { Events } from "@prisma/client";
+import { Events } from "@/types";
   import { FaRegTrashCan } from "react-icons/fa6";
   
-  type UserProps = {
+  type EventsProps = {
     events: Events[];
   };
   
-  const EventsTable = ({ events }: UserProps) => {
+  const EventsTable = ({ events }: EventsProps) => {
   
     return (
       <div className="  rounded-lg shadow-md px-6  max-h-[50vh] overflow-y-auto bg-white dark:bg-black">
@@ -40,7 +40,7 @@ import {
               <TableRow key={event.id}>
                 <TableCell className="font-medium">{event.title}</TableCell>
                 <TableCell>{event.description}</TableCell>
-                <TableCell>{event.startDate.toLocaleDateString()}</TableCell>
+                <TableCell>{event.startDate.toLocaleString()}</TableCell>
                 <TableCell className="">
                   <button>
                   <FaRegTrashCan size={18}  />

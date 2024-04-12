@@ -11,11 +11,9 @@ const LogoutBtn = () => {
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/auth/logout`,
-        { method: "DELETE" }
+        { method: "DELETE", credentials: "include" }
       );
 
-      console.log(res);
-      
       if (res.ok) {
         toast.success("User Logged out");
         router.refresh();
